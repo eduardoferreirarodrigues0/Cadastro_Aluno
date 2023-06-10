@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <title>Cadastro de Alunos</title>
+
+    <h1>Lista de Alunos</h1><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Matrícula</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for aluno in alunos %}
+            <tr>
+                <td>{{ aluno['nome'] }}</td>
+                <td>{{ aluno['matricula'] }}</td>
+                <td>
+                    <a class="Editar_Excluir" href="/edit/{{ loop.index0 }}">Editar</a>
+                    <a class="Editar_Excluir" href="/delete/{{ loop.index0 }}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>
+        <a class='Novo_Aluno' href="/add">Adicionar Aluno</a>
+    </h2>
+{% endblock %}
