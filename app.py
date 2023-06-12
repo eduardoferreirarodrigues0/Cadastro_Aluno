@@ -5,11 +5,11 @@ app = Flask(__name__)
 # Lista de alunos
 alunos = []
 
-# Rota principal - exibe a lista de alunos cadastrados
+
 @app.route('/homepage')
 def home():
     return render_template('homepage.html')
-
+# Rota principal - exibe a lista de alunos cadastrados
 @app.route('/')
 def index():
     return render_template('index.html', alunos=alunos)
